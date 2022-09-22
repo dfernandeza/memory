@@ -1,0 +1,68 @@
+.main {
+  padding: 0 2rem;
+}
+
+.title {
+  font-family: 'RocherColor';
+  font-size: var(--font-size-large);
+  font-variation-settings: 'BVEL' 0, 'SHDW' 100;
+  line-height: 1;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.instructions {
+  font-size: var(--font-size-small);
+  position: relative;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.instructions::before {
+  content: '';
+  width: 4px;
+  background-color: var(--teal);
+  position: absolute;
+  inset: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.card {
+  background-color: var(--yellow-light);
+  border: 4px solid var(--purple);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: initial;
+  transition: transform 0.3s ease-out;
+}
+
+.card > h3 {
+  margin-bottom: 1rem;
+  color: var(--purple);
+}
+
+.levelGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 0.5rem;
+}
+
+.levelGrid > div {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--teal);
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  transform: rotate(var(--level-rotation));
+}
