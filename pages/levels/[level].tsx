@@ -15,6 +15,15 @@ interface Props {
   cards: string[];
 }
 
+type Size = 6 | 10 | 16 | 24;
+
+const LAYOUTS: Record<Size, string> = {
+  6: styles.grid6,
+  10: styles.grid10,
+  16: styles.grid16,
+  24: styles.grid24,
+};
+
 const LEVELS = {
   '1': 6,
   '2': 10,
@@ -80,6 +89,8 @@ const Game: NextPage<Props> = ({ cards }) => {
   const gridRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
+  const deckSize = cards.length;
+
   useEffect(() => {
     if (found.length === cards.length) {
       const timer = setTimeout(() => {
@@ -97,7 +108,8 @@ const Game: NextPage<Props> = ({ cards }) => {
       if (
         found.length === cards.length ||
         flipped.length === 2 ||
-        flipped.includes(index)
+        flipped.includes(index) ||
+        found.includes(index)
       ) {
         return;
       }
@@ -174,7 +186,10 @@ const Game: NextPage<Props> = ({ cards }) => {
           <h2 className={styles.marker}>
             {found.length ? found.length / 2 : 0} / {cards.length / 2}
           </h2>
-          <section className={styles.grid} ref={gridRef}>
+          <section
+            className={`${styles.grid} ${LAYOUTS[cards.length as Size]}`}
+            ref={gridRef}
+          >
             {cards.map((emoji, index) => (
               <div key={index} className={styles.scene}>
                 <div

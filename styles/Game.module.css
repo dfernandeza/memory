@@ -47,14 +47,52 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(5rem, 8rem));
-  grid-auto-flow: dense;
+  grid-template-rows: auto;
   place-content: center;
   gap: 1rem;
-  padding: 2rem 0.5rem 4rem 0.5rem;
+  padding: 2rem 2rem 4rem;
+}
+
+/* Tablets */
+@media only screen and (min-device-width: 820px) and (max-device-width: 1024px) {
+  .grid6 {
+    grid-template-columns: repeat(3, minmax(100px, 200px));
+  }
+
+  .grid10 {
+    grid-template-columns: repeat(5, minmax(75px, 150px));
+  }
+
+  .grid16 {
+    grid-template-columns: repeat(5, minmax(70px, 120px));
+  }
+
+  .grid24 {
+    grid-template-columns: repeat(6, minmax(70px, 100px));
+  }
+}
+
+/* Phones */
+@media only screen and (min-device-width: 375px) and (max-device-width: 500px) {
+  .grid6 {
+    grid-template-columns: repeat(3, minmax(95px, 150px));
+  }
+
+  .grid10 {
+    grid-template-columns: repeat(4, minmax(70px, 150px));
+  }
+
+  .grid16 {
+    grid-template-columns: repeat(4, minmax(70px, 100px));
+  }
+
+  .grid24 {
+    grid-template-columns: repeat(5, minmax(50px, 100px));
+  }
 }
 
 .scene {
-  aspect-ratio: 1;
+  aspect-ratio: 1/1.5;
   perspective: 600px;
 }
 
