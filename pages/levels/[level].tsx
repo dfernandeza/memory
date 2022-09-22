@@ -45,6 +45,7 @@ const backgroundSound = new Howl({
   src: ['/audio/kidding-around.mp3'],
   volume: 0.1,
   loop: true,
+  html5: true,
 });
 
 const flipSound = new Howl({
