@@ -4,11 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
-        />
-
         {/* <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html--> */}
         <meta name="application-name" content="Memory" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
