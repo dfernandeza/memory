@@ -89,8 +89,6 @@ const Game: NextPage<Props> = ({ cards }) => {
   const gridRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  const deckSize = cards.length;
-
   useEffect(() => {
     if (found.length === cards.length) {
       const timer = setTimeout(() => {
@@ -144,16 +142,15 @@ const Game: NextPage<Props> = ({ cards }) => {
       <Layout>
         <header className={styles.header}>
           <div className={styles.controls}>
-            <Link href="/">
-              <a
-                className={styles.button}
-                onClick={() => {
-                  backgroundSound.stop();
-                  clickSound.play();
-                }}
-              >
-                BACK
-              </a>
+            <Link
+              href="/"
+              className={styles.button}
+              onClick={() => {
+                backgroundSound.stop();
+                clickSound.play();
+              }}
+            >
+              BACK
             </Link>
             <button
               className={`${styles.button} ${styles.danger}`}
