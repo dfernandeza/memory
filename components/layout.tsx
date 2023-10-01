@@ -1,5 +1,5 @@
-import { FC, ReactNode } from 'react';
-import Head from 'next/head';
+import { FC, ReactNode } from "react";
+import Head from "next/head";
 
 export const Layout: FC<{ children?: ReactNode }> = ({ children }) => {
   return (
@@ -13,7 +13,7 @@ export const Layout: FC<{ children?: ReactNode }> = ({ children }) => {
 
       <footer className="footer">
         <p>
-          Built with ❤️ by papa using{' '}
+          Built with ❤️ by papa using{" "}
           <a
             href="https://nextjs.org/"
             target="_blank"

@@ -1,6 +1,8 @@
-import { FC, ReactNode, useEffect } from 'react';
+"use client";
 
-import styles from '../styles/Dialog.module.css';
+import { FC, ReactNode, useEffect } from "react";
+
+import styles from "../styles/Dialog.module.css";
 
 export const Dialog: FC<{
   open?: boolean;
@@ -8,7 +10,7 @@ export const Dialog: FC<{
   children?: ReactNode;
 }> = ({ open, onOpen, children }) => {
   useEffect(() => {
-    if (open && typeof onOpen === 'function') {
+    if (open && typeof onOpen === "function") {
       onOpen();
     }
   }, [open, onOpen]);

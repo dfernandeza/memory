@@ -1,0 +1,52 @@
+.players {
+    padding: 0 2rem;
+}
+
+.titactoe {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(5rem, 8rem));
+    grid-template-rows: repeat(3, minmax(5rem, 8rem));
+    place-content: center;
+    gap: 1rem;
+    margin: 2rem 0 4rem;
+    /* reset */
+    margin-inline-start: unset;
+    padding-inline-start: unset;
+    cursor: pointer;
+}
+
+.titactoe li {
+    background-color: var(--teal);
+    aspect-ratio: 1;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentPlayer {
+    animation: colorize 1s infinite;
+}
+
+@keyframes colorize {
+    0% {
+        color: var(--purple);
+    }
+
+    100% {
+        color: var(--white);
+    }
+}
+
+/* Tablets */
+@media only screen and (min-device-width: 820px) and (max-device-width: 1024px) {
+}
+
+/* Phones */
+@media only screen and (min-device-width: 375px) and (max-device-width: 500px) {
+    .titactoe {
+        grid-template-columns: repeat(3, minmax(2rem, 5rem));
+        grid-template-rows: repeat(3, minmax(2rem, 5rem));
+    }
+}

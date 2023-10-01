@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
-import type { GetServerSideProps, NextPage } from 'next';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import type { ParsedUrlQuery } from 'querystring';
-import party from 'party-js';
-import { Howl } from 'howler';
+import { useEffect, useRef, useState } from "react";
+import type { GetServerSideProps, NextPage } from "next";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import type { ParsedUrlQuery } from "querystring";
+import party from "party-js";
+import { Howl } from "howler";
 
-import { Layout } from '../../components/layout';
-import { Dialog } from '../../components/dialog';
+import { Layout } from "../../components/layout";
+import { Dialog } from "../../components/dialog";
 
-import styles from '../../styles/Game.module.css';
+import styles from "../../styles/Game.module.css";
 
 interface Props {
   cards: string[];
@@ -25,25 +25,25 @@ const LAYOUTS: Record<Size, string> = {
 };
 
 const LEVELS = {
-  '1': 6,
-  '2': 10,
-  '3': 16,
-  '4': 24,
+  "1": 6,
+  "2": 10,
+  "3": 16,
+  "4": 24,
 };
 
 const EMOJIS = [
-  '🐶',
-  '🐱',
-  '🐭',
-  '🐰',
-  '🦊',
-  '🐻',
-  '🐼',
-  '🐯',
-  '🦁',
-  '🐮',
-  '🐷',
-  '🐸',
+  "🐶",
+  "🐱",
+  "🐭",
+  "🐰",
+  "🦊",
+  "🐻",
+  "🐼",
+  "🐯",
+  "🦁",
+  "🐮",
+  "🐷",
+  "🐸",
 ];
 
 const DEFAULT_LEVEL = 1;
@@ -51,30 +51,30 @@ const DEFAULT_LEVEL = 1;
 // Sounds
 
 const backgroundSound = new Howl({
-  src: ['/audio/kidding-around.mp3'],
+  src: ["/audio/kidding-around.mp3"],
   volume: 0.1,
   loop: true,
   html5: true,
 });
 
 const flipSound = new Howl({
-  src: ['/audio/flip.wav'],
+  src: ["/audio/flip.wav"],
 });
 
 const foundSound = new Howl({
-  src: ['/audio/found.wav'],
+  src: ["/audio/found.wav"],
 });
 
 const winnerSound = new Howl({
-  src: ['/audio/cheer.wav'],
+  src: ["/audio/cheer.wav"],
 });
 
 const failSound = new Howl({
-  src: ['/audio/fart.wav'],
+  src: ["/audio/fart.wav"],
 });
 
 const clickSound = new Howl({
-  src: ['/audio/click.wav'],
+  src: ["/audio/click.wav"],
 });
 
 const Game: NextPage<Props> = ({ cards }) => {
@@ -90,13 +90,18 @@ const Game: NextPage<Props> = ({ cards }) => {
   const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let timer: NodeJS.Timeout;
+
     if (found.length === cards.length) {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         winnerSound.play();
         setFinished(true);
-        clearTimeout(timer);
       }, 1000);
     }
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [cards, found]);
 
   function handleCardClick(index: number) {
@@ -193,7 +198,7 @@ const Game: NextPage<Props> = ({ cards }) => {
                   className={`${styles.card} ${
                     found.includes(index) || flipped.includes(index)
                       ? styles.flipped
-                      : ''
+                      : ""
                   }`}
                   onClick={handleCardClick(index)}
                 >

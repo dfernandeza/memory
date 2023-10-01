@@ -22,6 +22,7 @@
   box-shadow: 4px 4px 0px var(--gray);
   transition: box-shadow 0.1s ease-in-out;
   cursor: pointer;
+  text-align: center;
 }
 
 .button.danger {
@@ -36,9 +37,13 @@
   justify-self: end;
 }
 
+.button.large {
+  width: 12rem;
+}
+
 .marker {
   margin-top: 2rem;
-  font-family: 'RocherColor';
+  font-family: var(--font-rocher-color);
   font-size: var(--font-size-medium);
   font-variation-settings: 'BVEL' 0, 'SHDW' 100;
   text-align: center;
@@ -134,7 +139,39 @@
 .dialogTitle {
   margin: 0 0 1rem;
   text-transform: uppercase;
-  font-family: 'RocherColor';
+  font-family: var(--font-rocher-color);
   font-size: 1.75rem;
   font-variation-settings: 'BVEL' 0, 'SHDW' 100;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form fieldset {
+  border: none;
+} 
+
+.form label {
+  margin-right: 1rem;
+}
+
+.form input {
+  padding: 0.1rem 0.5rem;
+  border: 2px solid var(--gray);
+}
+
+.form input:invalid {
+  padding: 0.1rem 0.5rem;
+  border: 2px solid var(--red-dark);
+}
+
+.form button {
+  margin-top: 1rem;
+} 
+
+.form .error {
+  color: var(--red-dark);
 }
