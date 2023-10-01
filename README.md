@@ -1,12 +1,18 @@
 # Memory cards game
 
-Just an extremely simple but fun game that my daughter Lena enjoys 👨‍👧.
+Just some extremely simple but fun games that my daughter Lena enjoys 👨‍👧.
 
 Built with [NEXT.JS](https://nextjs.org/)
 
+## Memory
 > Memory starts with a grid of cards where you have to find image pairs. The game finish when all the pairs have been discovered.
 
+## Tic-Tac-Toe
+> Tic-Tac-Toe starts with a grid with 3 rows and 3 columns, each turn, you draw your symbol (X or O) in one of the empty cells on the game board. You can start anywhere you like. The goal is to make a line of three of your symbols in a row, either horizontally, vertically, or diagonally.
+
 ## Operations
+
+⚠️ This project is currently being migrated to use the new NextJS App Router.
 
 First, run the development server:
 

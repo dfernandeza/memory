@@ -3,12 +3,19 @@
 }
 
 .title {
-  font-family: 'RocherColor';
+  font-family: var(--font-rocher-color);
   font-size: var(--font-size-large);
   font-variation-settings: 'BVEL' 0, 'SHDW' 100;
   line-height: 1;
-  margin: 2rem 0;
+  margin: 2rem;
   text-align: center;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 4rem 0;
 }
 
 .instructions {

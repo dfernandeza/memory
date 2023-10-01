@@ -1,13 +1,11 @@
-import type { NextPage } from 'next';
-import Link from 'next/link';
+import type { NextPage } from "next";
+import Link from "next/link";
 
-import { Layout } from '../components/layout';
-
-import styles from '../styles/Home.module.css';
+import styles from "../../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <>
       <header>
         <h1 className={styles.title}>Memory cards game!</h1>
       </header>
@@ -25,7 +23,7 @@ const Home: NextPage = () => {
           <Link
             href="/levels/1"
             className={styles.card}
-            style={{ '--level-rotation': '2deg' }}
+            style={{ "--level-rotation": "2deg" }}
           >
             <h3>6 cards</h3>
             <article className={styles.levelGrid}>
@@ -38,7 +36,7 @@ const Home: NextPage = () => {
           <Link
             href="/levels/2"
             className={styles.card}
-            style={{ '--level-rotation': '-2deg' }}
+            style={{ "--level-rotation": "-2deg" }}
           >
             <h3>10 cards</h3>
             <article className={styles.levelGrid}>
@@ -51,7 +49,7 @@ const Home: NextPage = () => {
           <Link
             href="/levels/3"
             className={styles.card}
-            style={{ '--level-rotation': '2deg' }}
+            style={{ "--level-rotation": "2deg" }}
           >
             <h3>16 cards</h3>
             <article className={styles.levelGrid}>
@@ -64,7 +62,7 @@ const Home: NextPage = () => {
           <Link
             href="/levels/4"
             className={styles.card}
-            style={{ '--level-rotation': '-2deg' }}
+            style={{ "--level-rotation": "-2deg" }}
           >
             <h3>24 cards</h3>
             <article className={styles.levelGrid}>
@@ -75,7 +73,7 @@ const Home: NextPage = () => {
           </Link>
         </div>
       </main>
-    </Layout>
+    </>
   );
 };
 

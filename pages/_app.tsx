@@ -1,9 +1,20 @@
-import '../styles/globals.css';
+import "../styles/globals.css";
 
-import type { AppProps } from 'next/app';
+import localFont from "next/font/local";
+import type { AppProps } from "next/app";
+
+const RocherColorFont = localFont({
+  src: "../public/RocherColor/RocherColor.woff2",
+  variable: "--font-rocher-color",
+  display: "swap",
+});
 
 function Memory({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <div className={RocherColorFont.variable}>
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
 export default Memory;
