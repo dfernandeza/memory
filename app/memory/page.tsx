@@ -2,11 +2,20 @@ import type { NextPage } from "next";
 import Link from "next/link";
 
 import styles from "../../styles/Home.module.css";
+import headerStyles from "../../styles/Game.module.css";
 
 const Home: NextPage = () => {
   return (
     <>
       <header>
+        <div className={headerStyles.header}>
+          <div className={headerStyles.controls}>
+            <Link href="/" className={headerStyles.button}>
+              BACK
+            </Link>
+          </div>
+        </div>
+
         <h1 className={styles.title}>Memory cards game!</h1>
       </header>
       <main className={styles.main}>
